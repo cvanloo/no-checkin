@@ -1,0 +1,5 @@
+- id: nocheckin
+  name: No-Checkin
+  entry: no-checkin.janet
+  language: script
+  types: [file]
