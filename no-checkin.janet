@@ -10,18 +10,18 @@
              (take (- (length files) 1) files)))
 (def errors @[])
 
-(def color-table @{:clear "\e[0m"
-                   :red "\e[31m"
-                   :blue "\e[34m"})
+(def colors @{:clear "\e[0m"
+              :red "\e[31m"
+              :blue "\e[34m"})
 
 (each word forbidden-words
   (each file files
     (if ($? git grep -q -E -iF ,word "--" ,file)
       (array/push errors (string
                            "disallowed expression "
-                           (color-table :red) word (color-table :clear)
+                           (colors :red) word (colors :clear)
                            " in file "
-                           (color-table :blue) file (color-table :clear))))))
+                           (colors :blue) file (colors :clear))))))
 
 (if (not (empty? errors))
   (do
