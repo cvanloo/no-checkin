@@ -25,5 +25,5 @@
 
 (if (not (empty? errors))
   (do
-    (each err errors (print err))
+    (each err errors (print "[No-Checkin] " err))
     (os/exit 1)))
