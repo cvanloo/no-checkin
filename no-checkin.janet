@@ -4,8 +4,7 @@
 
 (def forbidden-words @["nocheckin" "dbg!"])
 
-(def files-str @"")
-($ git diff --staged --name-only --diff-filter=d >,files-str)
+(def files-str ($< git diff --staged --name-only --diff-filter=d))
 
 (def files (filter
              (fn [a] (not= a ""))
