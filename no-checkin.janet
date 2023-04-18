@@ -20,4 +20,4 @@
 (if (not (empty? errors))
   (do
     (each err errors (print err))
-    (error "commit aborted!")))
+    (os/exit 1)))
