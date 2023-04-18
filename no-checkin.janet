@@ -6,9 +6,8 @@
 
 (def files-str ($< git diff --staged --name-only --diff-filter=d))
 
-(def files (filter
-             (fn [a] (not= a ""))
-             (string/split "\n" files-str)))
+(def files (let [files (string/split "\n" files-str)]
+             (take (- (length files) 1) files)))
 (def errors @[])
 
 (each word forbidden-words
