@@ -1,5 +1,0 @@
-repos:
-  - repo: https://github.com/cvanloo/commit-hooks
-    rev: v0.1.0
-    hooks:
-      - id: nocheckin
